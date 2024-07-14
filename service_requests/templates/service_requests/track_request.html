@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Service Request</title>
+</head>
+<body>
+    <h1>Track Service Request</h1>
+    <p>Request Type: {{ service_request.request_type }}</p>
+    <p>Description: {{ service_request.description }}</p>
+    <p>Status: {{ service_request.status }}</p>
+    <p>Created At: {{ service_request.created_at }}</p>
+    <p>Resolved At: {{ service_request.resolved_at }}</p>
+    <p><a href="{% url 'submit_request' %}">Submit another request</a></p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Service Request</title>
+</head>
+<body>
+    <h1>Submit Service Request</h1>
+    {% if user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> to submit a service request.</p>
+    {% endif %}
+</body>
+</html>
